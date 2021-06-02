@@ -1,6 +1,7 @@
 package com.hk210.spacexcrew.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Index;
 
 import com.bumptech.glide.Glide;
+import com.hk210.spacexcrew.DeatilsViewActivity;
 import com.hk210.spacexcrew.Model.Crew;
 import com.hk210.spacexcrew.R;
 import com.hk210.spacexcrew.ViewModel.CrewViewModel;
@@ -37,8 +41,17 @@ public class CrewAdapter extends RecyclerView.Adapter<CrewAdapter.CrewViewHolder
     public void onBindViewHolder(@NonNull CrewViewHolder holder, int position) {
         Crew crew = list.get(position);
         holder.full.setText(crew.getName());
-        holder.stat.setText(crew.getStatus());
+        holder.stat.setText("Status: "+crew.getStatus());
         Glide.with(context).load(crew.getImage()).into(holder.imageView);
+        holder.layout.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DeatilsViewActivity.class);
+            intent.putExtra("image_url", crew.getImage());
+            intent.putExtra("name", crew.getName());
+            intent.putExtra("agency", crew.getStatus());
+            intent.putExtra("status", crew.getAgency());
+            intent.putExtra("web", crew.getWiki());
+            context.startActivity(intent);
+        });
 
     }
 
@@ -53,18 +66,16 @@ public class CrewAdapter extends RecyclerView.Adapter<CrewAdapter.CrewViewHolder
 
     public static class CrewViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView full,stat,agency,web,id;
+        public TextView full,stat,id;
         public CircleImageView imageView;
-        public ImageView image;
+        private ConstraintLayout layout;
 
         public CrewViewHolder(@NonNull View itemView) {
             super(itemView);
             full = itemView.findViewById(R.id.crew_name);
             stat = itemView.findViewById(R.id.crew_status);
             imageView = itemView.findViewById(R.id.crew_image);
-            agency = itemView.findViewById(R.id.agency_act);
-            web = itemView.findViewById(R.id.linl_act);
-            image = itemView.findViewById(R.id.image_act);
+            layout = itemView.findViewById(R.id.list_layout);
         }
     }
 
