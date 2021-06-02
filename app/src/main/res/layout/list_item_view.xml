@@ -56,10 +56,20 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/status"
                 android:textSize="16sp"
+                android:textAllCaps="true"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/crew_name"
                 app:layout_constraintStart_toStartOf="@+id/crew_name"
                 app:layout_constraintTop_toBottomOf="@+id/crew_name" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="250dp"
+                android:src="@drawable/ahead"
+                app:layout_constraintBottom_toBottomOf="@+id/crew_status"
+                app:layout_constraintStart_toEndOf="@+id/crew_image"
+                app:layout_constraintTop_toTopOf="@+id/crew_name"
+                app:layout_constraintVertical_bias="0.363" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

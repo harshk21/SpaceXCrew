@@ -62,9 +62,9 @@ public class CrewAdapter extends RecyclerView.Adapter<CrewAdapter.CrewViewHolder
             full = itemView.findViewById(R.id.crew_name);
             stat = itemView.findViewById(R.id.crew_status);
             imageView = itemView.findViewById(R.id.crew_image);
-           // agency = itemView.findViewById(R.id.agency_act);
-          //  web = itemView.findViewById(R.id.linl_act);
-           // image = itemView.findViewById(R.id.image_act);
+            agency = itemView.findViewById(R.id.agency_act);
+            web = itemView.findViewById(R.id.linl_act);
+            image = itemView.findViewById(R.id.image_act);
         }
     }
 
