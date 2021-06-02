@@ -7,13 +7,13 @@
     tools:context=".DeatilsViewActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/image_act"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="centerInside"
-        android:src="@drawable/deafult"
+        android:src="@drawable/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

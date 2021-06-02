@@ -1,6 +1,7 @@
 package com.hk210.spacexcrew.Adapter;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,6 @@ public class CrewAdapter extends RecyclerView.Adapter<CrewAdapter.CrewViewHolder
         Crew crew = list.get(position);
         holder.full.setText(crew.getName());
         holder.stat.setText(crew.getStatus());
-        holder.agency.setText(crew.getAgency());
-        holder.web.setText(crew.getWiki());
-        holder.id.setText(crew.getId());
         Glide.with(context).load(crew.getImage()).into(holder.imageView);
 
     }
@@ -56,16 +54,17 @@ public class CrewAdapter extends RecyclerView.Adapter<CrewAdapter.CrewViewHolder
     public static class CrewViewHolder extends RecyclerView.ViewHolder{
 
         public TextView full,stat,agency,web,id;
-        public ImageView imageView;
+        public CircleImageView imageView;
+        public ImageView image;
 
         public CrewViewHolder(@NonNull View itemView) {
             super(itemView);
             full = itemView.findViewById(R.id.crew_name);
-            agency = itemView.findViewById(R.id.crew_agency);
             stat = itemView.findViewById(R.id.crew_status);
-            web = itemView.findViewById(R.id.crew_link);
             imageView = itemView.findViewById(R.id.crew_image);
-            id = itemView.findViewById(R.id.crew_id);
+           // agency = itemView.findViewById(R.id.agency_act);
+          //  web = itemView.findViewById(R.id.linl_act);
+           // image = itemView.findViewById(R.id.image_act);
         }
     }
 
