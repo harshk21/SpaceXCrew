@@ -4,7 +4,8 @@
     <string name="refresh">Refresh</string>
     <string name="name">Name</string>
     <string name="agency">Agency</string>
-    <string name="know_more">Know More</string>
+    <string name="know_more">Know More: Go to the Link</string>
     <string name="status">Status</string>
     <string name="id">ID</string>
+    <string name="weblink">Weblink</string>
 </resources>
